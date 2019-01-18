@@ -18,4 +18,9 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Farmer.Data\Farmer.Data.csproj" />
+    <ProjectReference Include="..\Farmer.Services\Farmer.Services.csproj" />
+  </ItemGroup>
+
 </Project>
