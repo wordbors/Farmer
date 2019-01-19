@@ -48,13 +48,19 @@ namespace Farmer.Web
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
             app.UseDatabaseMigration();
 
             app.UseStaticFiles();
 
             app.UseAuthentication();
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }
