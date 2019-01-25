@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Farmer.Services;
+using Farmer.Services.Implementations;
 
 namespace Farmer.Web
 {
@@ -29,6 +31,8 @@ namespace Farmer.Web
             services.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<FarmerDbContext>()
                 .AddDefaultTokenProviders();
+
+            services.AddTransient<INomenclaturesService, NomenclaturesService>();
 
             services.AddMvc();
         }

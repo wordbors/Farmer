@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Villages>
+
+
+@{
+    ViewData["Title"] = "Номенклатура села";
+}
+
+<h2>Номенклатура села</h2>
+
+
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Име</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
